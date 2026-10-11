@@ -1,5 +1,5 @@
 {
-  "name": "inventoryapp",
+  "name": "medicineoracle",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/engrwithhabeeb/inventoryapp.git"
+    "url": "git+https://github.com/engrwithhabeeb/medicineoracle.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/engrwithhabeeb/inventoryapp/issues"
+    "url": "https://github.com/engrwithhabeeb/medicineoracle/issues"
   },
-  "homepage": "https://github.com/engrwithhabeeb/inventoryapp#readme",
+  "homepage": "https://github.com/engrwithhabeeb/medicineoracle#readme",
   "dependencies": {
     "dotenv": "^17.4.2",
     "ejs": "^6.0.1",
