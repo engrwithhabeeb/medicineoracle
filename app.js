@@ -2,13 +2,17 @@ require("node:process").loadEnvFile();
 
 const express = require("express");
 const path = require("node:path");
+const globalErrorHandler = require("./middlewares/error_handlers/global");
 
 const app = express();
 
-const PORT = undefined; // rename to your prefer port.
+const PORT = Number(process.env.APP_PORT) || 5757; // rename to your prefer port.
 
 app.set("views", path.join(__dirname, "views")); // leave as is unless your ui directory is not views
 app.set("view engine", "ejs"); // don't change unless you are using another view engine apart from ejs
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 const ENGINEER = {
   name: "Habeeb Abdullahi",
@@ -23,8 +27,10 @@ app.get("/", (req, res) => {
   Feel to change it to what you application needs */
 });
 
-app.listen(PORT || 8080 /* free to remove || 8080 after renaming PORT at the top or leave them as fallback */, () => {
+app.use(globalErrorHandler);
+
+app.listen(PORT/* free to remove || 8080 after renaming PORT at the top or leave them as fallback */, () => {
   console.log(
-    `App starting at ${PORT ? PORT : 8080 /* free to remove the condition ? PORT : 8080 after renaming PORT at the top or leave them as fallback */}`,
+    `App starting at http://localhost:${PORT}`,
   );
 });
