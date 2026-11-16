@@ -21,6 +21,12 @@ const DB_ERROR_REGISTRY = {
         status: 503,
         type: "DatabaseOfflineError",
         message: () => "The central database server is temporarily unreachable. Please try again shortly."
+    },
+
+    "ROW_NOT_FOUND": {
+        status: 404,
+        type: "RowNotFound",
+        message: (err) => err.message,
     }
 };
 

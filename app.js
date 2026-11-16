@@ -2,6 +2,7 @@ require("node:process").loadEnvFile();
 
 const express = require("express");
 const path = require("node:path");
+const categoryRouter = require("./routes/categories");
 const globalErrorHandler = require("./middlewares/error_handlers/global");
 
 const app = express();
@@ -26,6 +27,8 @@ app.get("/", (req, res) => {
   }); /* rendering view at index.ejs and passing data to it. 
   Feel to change it to what you application needs */
 });
+
+app.use("/categories", categoryRouter);
 
 app.use(globalErrorHandler);
 
